@@ -1,4 +1,11 @@
 baseURL = "https://www.agaru.be/"
 languageCode = "fr-be"
-title = "上がる agaru"
+title = "agaru"
 theme = "aether"
+author = "Simon Michelizza"
+
+[params]
+brand = "上がる"
+description = "Yet another tech blog"
+bgimg = "img/ignasi_pattern_s.png"
+rssinmenu = true
