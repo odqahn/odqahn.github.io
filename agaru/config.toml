@@ -1,4 +1,4 @@
-baseURL = "https://www.agaru.be/"
+baseURL = "http://www.agaru.be/"
 languageCode = "fr-be"
-title = "上がる"
+title = "上がる agaru"
 theme = "aether"
