@@ -1,0 +1,4 @@
+baseURL = "https://www.agaru.be/"
+languageCode = "fr-be"
+title = "上がる"
+theme = "aether"
