@@ -1,7 +1,7 @@
 baseURL = "https://www.agaru.be/"
 languageCode = "fr-be"
 title = "agaru"
-theme = "aether"
+theme = "aetherkusto"
 author = "Simon Michelizza"
 
 [params]

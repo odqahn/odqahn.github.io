@@ -45,7 +45,7 @@ Mon code est hébergé dans github, ce qui va me permettre d'automatiser la publ
 Sur les principes d'automatisations, qu'on peut retrouver dans la philosphie devops par exemple, j'ai utilisé workflow github afin de pousser automatiquement mon code dans l'app service.
 
 Pour se faire, après avoir créé mon repo dans github, il me suffit de me connecter à mon compte github pendant la création de mon app service:
-![screenshot du portail azure](webappstatic.png).
+![screenshot du portail azure](img/hosting/webappstatic.png)
 
 Après avoir choisi son organisation, le repo et la branche, Azure va automatiquement ajouter un dossier .github contenant votre workflow dans le source control.
 

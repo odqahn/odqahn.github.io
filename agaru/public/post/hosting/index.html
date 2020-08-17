@@ -50,18 +50,18 @@
 <h2 id="intro">Intro</h2>
 <p>Les outils utilisés sont:</p>
 <ul>
-<li><a href="https://gohugo.io/">Hugo</a></li>
-<li><a href="https://azure.microsoft.com/fr-fr/services/app-service/static/">Azure Statis Web Apps</a></li>
-<li><a href="https://github.com">Github</a></li>
-<li><a href="https://code.visualstudio.com/">VScode</a></li>
-<li><a href="https://daringfireball.net/projects/markdown/">Markdown</a></li>
+<li><a href="https://gohugo.io/" target="_blank">Hugo</a></li>
+<li><a href="https://azure.microsoft.com/fr-fr/services/app-service/static/" target="_blank">Azure Statis Web Apps</a></li>
+<li><a href="https://github.com" target="_blank">Github</a></li>
+<li><a href="https://code.visualstudio.com/" target="_blank">VScode</a></li>
+<li><a href="https://daringfireball.net/projects/markdown/" target="_blank">Markdown</a></li>
 </ul>
 <p>Hugo permets de générer un site statique sur base de configurations et de fichiers Markdown. L&rsquo;avantage de ce système est d&rsquo;avoir besoin de très peu de ressources pour servir le site, il n&rsquo;y aura que très peu (voir pas) de calcul à faire, autant du côté serveur que du côté client.</p>
 <p>Concernant Markdown, il s&rsquo;agit d&rsquo;un language balisé plutôt simple à utiliser. Il a pour but de fournir un document facile à lire et à interpréter et transformable en html, pdf,&hellip; C&rsquo;est ce language qui est utilisé traditionnellement dans les repos git pour composer le fichier README.md (et tout autre doc faisant partie du source control).</p>
 <h2 id="hugo">Hugo</h2>
 <p>Hugo est assez simple à installer: <a href="https://gohugo.io/getting-started/installing">https://gohugo.io/getting-started/installing</a></p>
 <p>Une fois en place, il vous suffira de créer un nouveau site à l&rsquo;aide de votre terminal préféré: <code>hugo new site newsite</code>.</p>
-<p>Pour l&rsquo;utilisation basique de Hugo, je vous renvoi au <a href="https://gohugo.io/getting-started/quick-start/">tuto quick start</a> du projet.</p>
+<p>Pour l&rsquo;utilisation basique de Hugo, je vous renvoi au <a href="https://gohugo.io/getting-started/quick-start/" target="_blank">tuto quick start</a> du projet.</p>
 <h2 id="azure">Azure</h2>
 <p>Concernant l&rsquo;hébergement, j&rsquo;utilise une web app dans Azure spécialement crééee pour du contenu dynamique. Innutile de payer pour le support de framework innutilisé, il n&rsquo;y aura ici que de l&rsquo;htlm et un peu de javascript.</p>
 <p>Cette technologie est actuellement en preview et gratuite. Il suffit d&rsquo;avoir un abonnement Azure pour se lancer.</p>
@@ -71,9 +71,9 @@
 <p>Mon code est hébergé dans github, ce qui va me permettre d&rsquo;automatiser la publication des nouvelles versions. Contrairement à un site web dynamique comme on à l&rsquo;habitude d&rsquo;en croiser (Wordpress, Drupal,&hellip;), chaque mise à jour du contenu va m&rsquo;obliger à publier le site. Et comme chaque action manuelle, cela peut vite devenir redondant, sans parler des erreurs humaines.</p>
 <p>Sur les principes d&rsquo;automatisations, qu&rsquo;on peut retrouver dans la philosphie devops par exemple, j&rsquo;ai utilisé workflow github afin de pousser automatiquement mon code dans l&rsquo;app service.</p>
 <p>Pour se faire, après avoir créé mon repo dans github, il me suffit de me connecter à mon compte github pendant la création de mon app service:
-<img src="webappstatic.png" alt="screenshot du portail azure">.</p>
+<img src="img/hosting/webappstatic.png" alt="screenshot du portail azure"></p>
 <p>Après avoir choisi son organisation, le repo et la branche, Azure va automatiquement ajouter un dossier .github contenant votre workflow dans le source control.</p>
-<p>Il ne reste maintenant qu&rsquo;à générer vos pages avec la CLI de hugo (voir le <a href="https://gohugo.io/getting-started/quick-start/">tuto quick start</a>), commiter et pusher vos changements. Tout sera déployé automatiquement sur votre site quelques minutes plus tard.</p>
+<p>Il ne reste maintenant qu&rsquo;à générer vos pages avec la CLI de hugo (voir le <a href="https://gohugo.io/getting-started/quick-start/" target="_blank">tuto quick start</a>), commiter et pusher vos changements. Tout sera déployé automatiquement sur votre site quelques minutes plus tard.</p>
 
       </article>
       
