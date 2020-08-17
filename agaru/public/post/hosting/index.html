@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr-be" dir="ltr">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Static website using Hugo &middot; agaru</title>
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  
+  
+  
+  
+  <link href="https://www.agaru.be/css/concated.min.css" rel="stylesheet">
+  
+  <style>
+    body {
+      background: #ecedef url("https://www.agaru.be/img/ignasi_pattern_s.png") repeat;
+    }
+  </style>
+</head>
+
+  <body class="single-body">
+    <nav class="nav-bar side-padding">
+  <h1 class="nav-header"><a href="https://www.agaru.be/" class="nav-text">上がる</a></h1>
+  <div class="hamburger-menu">
+    <button onclick="hamburgerMenuPressed.call(this)" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="menu" class="hamburger-menu-overlay">
+      <li><a href="https://www.agaru.be/" class="hamburger-menu-overlay-link">Home</a></li>
+      
+      <li><a href="https://www.agaru.be/index.xml" class="hamburger-menu-overlay-link">rss</a></li>
+    </ul>
+  </div>
+</nav>
+
+    <main class="content side-text-padding">
+      <article class="post dropcase">
+        <header class="post-header">
+          <h1 class="post-title">Static website using Hugo</h1>
+          <p class="post-date">Posted <time datetime="2020-08-02">Aug 2, 2020</time></p>
+        </header>
+        
+        
+        <h1 id="bienvenu-chez-moi">Bienvenu chez moi!</h1>
+<p>Pour mon premier post, parlons de l&rsquo;hébergement de ce site.</p>
+<h2 id="intro">Intro</h2>
+<p>Les outils utilisés sont:</p>
+<ul>
+<li><a href="https://gohugo.io/">Hugo</a></li>
+<li><a href="https://azure.microsoft.com/fr-fr/services/app-service/static/">Azure Statis Web Apps</a></li>
+<li><a href="https://github.com">Github</a></li>
+<li><a href="https://code.visualstudio.com/">VScode</a></li>
+<li><a href="https://daringfireball.net/projects/markdown/">Markdown</a></li>
+</ul>
+<p>Hugo permets de générer un site statique sur base de configurations et de fichiers Markdown. L&rsquo;avantage de ce système est d&rsquo;avoir besoin de très peu de ressources pour servir le site, il n&rsquo;y aura que très peu (voir pas) de calcul à faire, autant du côté serveur que du côté client.</p>
+<p>Concernant Markdown, il s&rsquo;agit d&rsquo;un language balisé plutôt simple à utiliser. Il a pour but de fournir un document facile à lire et à interpréter et transformable en html, pdf,&hellip; C&rsquo;est ce language qui est utilisé traditionnellement dans les repos git pour composer le fichier README.md (et tout autre doc faisant partie du source control).</p>
+<h2 id="hugo">Hugo</h2>
+<p>Hugo est assez simple à installer: <a href="https://gohugo.io/getting-started/installing">https://gohugo.io/getting-started/installing</a></p>
+<p>Une fois en place, il vous suffira de créer un nouveau site à l&rsquo;aide de votre terminal préféré: <code>hugo new site newsite</code>.</p>
+<p>Pour l&rsquo;utilisation basique de Hugo, je vous renvoi au <a href="https://gohugo.io/getting-started/quick-start/">tuto quick start</a> du projet.</p>
+<h2 id="azure">Azure</h2>
+<p>Concernant l&rsquo;hébergement, j&rsquo;utilise une web app dans Azure spécialement crééee pour du contenu dynamique. Innutile de payer pour le support de framework innutilisé, il n&rsquo;y aura ici que de l&rsquo;htlm et un peu de javascript.</p>
+<p>Cette technologie est actuellement en preview et gratuite. Il suffit d&rsquo;avoir un abonnement Azure pour se lancer.</p>
+<p>La configuration de cet artefact est super simple. On pourra lui ajouter un domaine custo (ici agaru.be) en suivant l&rsquo;assistant. Le certificat https sera automatiquement ajouté.</p>
+<p>Une fois en place, vous pouvez déposer des fichiers htlm ou mieux&hellip; Automatiser le déploiement!</p>
+<h2 id="git-workflow--deploy">Git workflow &amp; deploy</h2>
+<p>Mon code est hébergé dans github, ce qui va me permettre d&rsquo;automatiser la publication des nouvelles versions. Contrairement à un site web dynamique comme on à l&rsquo;habitude d&rsquo;en croiser (Wordpress, Drupal,&hellip;), chaque mise à jour du contenu va m&rsquo;obliger à publier le site. Et comme chaque action manuelle, cela peut vite devenir redondant, sans parler des erreurs humaines.</p>
+<p>Sur les principes d&rsquo;automatisations, qu&rsquo;on peut retrouver dans la philosphie devops par exemple, j&rsquo;ai utilisé workflow github afin de pousser automatiquement mon code dans l&rsquo;app service.</p>
+<p>Pour se faire, après avoir créé mon repo dans github, il me suffit de me connecter à mon compte github pendant la création de mon app service:
+<img src="webappstatic.png" alt="screenshot du portail azure">.</p>
+<p>Après avoir choisi son organisation, le repo et la branche, Azure va automatiquement ajouter un dossier .github contenant votre workflow dans le source control.</p>
+<p>Il ne reste maintenant qu&rsquo;à générer vos pages avec la CLI de hugo (voir le <a href="https://gohugo.io/getting-started/quick-start/">tuto quick start</a>), commiter et pusher vos changements. Tout sera déployé automatiquement sur votre site quelques minutes plus tard.</p>
+
+      </article>
+      
+    </main>
+    <nav class="end-nav side-padding">
+      
+      <a ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  href="https://www.agaru.be/" class="card home-card" style="background-image: url( https://www.agaru.be/img/grey-cloud.jpg )" rel="bookmark" >
+  Home
+</a>
+    </nav>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+  
+  <script src="https://www.agaru.be/js/core.min.js"></script>
+
+  </body>
+</html>

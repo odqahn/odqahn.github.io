@@ -10,14 +10,14 @@
         <atom:link href="https://www.agaru.be/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>!Dlrow Olleh</title>
-      <link>https://www.agaru.be/post/dlrow-olleh/</link>
+      <title>Static website using Hugo</title>
+      <link>https://www.agaru.be/post/hosting/</link>
       <pubDate>Sun, 02 Aug 2020 19:15:15 +0200</pubDate>
       
-      <guid>https://www.agaru.be/post/dlrow-olleh/</guid>
-      <description>Bienvenu chez moi!
-Ma première expérience est la création d&amp;rsquo;un site static avec HUGO, Github &amp;amp; Azure Static Web App (en preview pour l&amp;rsquo;instant).
-Test de contenu.</description>
+      <guid>https://www.agaru.be/post/hosting/</guid>
+      <description>Bienvenu chez moi! Pour mon premier post, parlons de l&amp;rsquo;hébergement de ce site.
+Intro Les outils utilisés sont:
+ Hugo Azure Statis Web Apps Github VScode Markdown  Hugo permets de générer un site statique sur base de configurations et de fichiers Markdown. L&amp;rsquo;avantage de ce système est d&amp;rsquo;avoir besoin de très peu de ressources pour servir le site, il n&amp;rsquo;y aura que très peu (voir pas) de calcul à faire, autant du côté serveur que du côté client.</description>
     </item>
   </channel>
 </rss>
