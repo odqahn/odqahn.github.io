@@ -9,7 +9,7 @@
     <channel>
         <title>上がる</title>
         <link>https://www.agaru.be/</link>
-        <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
+        <description>agaru.be</description>
         <generator>Hugo 0.81.0 https://gohugo.io/</generator>
         
             <language>fr</language>
@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Thu, 04 Mar 2021 20:51:38 &#43;0100</lastBuildDate>
+        <lastBuildDate>Thu, 04 Mar 2021 20:54:35 &#43;0100</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://www.agaru.be/rss.xml" />
         
