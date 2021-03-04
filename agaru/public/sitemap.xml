@@ -1,28 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://www.agaru.be/</loc>
     <lastmod>2020-08-02T19:15:15+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.agaru.be/post/</loc>
     <lastmod>2020-08-02T19:15:15+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.agaru.be/post/hosting/</loc>
     <lastmod>2020-08-02T19:15:15+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.agaru.be/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://www.agaru.be/tags/</loc>
   </url>
-  
 </urlset>
