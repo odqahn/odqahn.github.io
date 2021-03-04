@@ -1,11 +1,3 @@
-baseURL = "https://www.agaru.be/"
-languageCode = "fr-be"
-title = "agaru"
-theme = "aetherkusto"
-author = "Simon Michelizza"
-
-[params]
-brand = "上がる"
-description = "Yet another tech blog"
-bgimg = "img/ignasi_pattern_s.png"
-rssinmenu = true
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My New Hugo Site"
