@@ -1,7 +1,7 @@
 ---
 title: "Azure Devops & VMSS - part1"
 date: 2021-03-04T20:29:11+01:00
-draft: false
+draft: true
 ---
 
 # Azure DevOps et VMSS agents
@@ -17,7 +17,7 @@ Dans cette série de post nous allons :
 
 Commençons directement !
 
-## Pourquoi les VMSS, c'est cool?
+## Pourquoi les VMSS, c'est cool pour Azure DevOps?
 ### Ressources privées
 A moins d'être une start up ou d'avoir foncé dans le cloud, votre infra est certainement composée d'un mélange de pleins de choses. On va y retrouver des VM, dans des VNet, des ressources publiques mais aussi des ressources privées. Depuis quelques temps, Azure propose de privatiser pas mal de ressources grâce aux [private endpoint](https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview) par exemple.
 

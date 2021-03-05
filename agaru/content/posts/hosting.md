@@ -1,52 +1,52 @@
 ---
 title: "Hosting"
-date: 2021-03-01T18:27:12+01:00
+date: 2021-05-01T18:27:12+01:00
 draft: false
 ---
 
-# Bienvenu chez moi! 
+# Welcome! 
 
-Pour mon premier post, parlons de l'hébergement de ce site.
+Here's a first post about this webiste.
 
 ## Intro
-Les outils utilisés sont:
+Tools:
 - [Hugo](https://gohugo.io/)
 - [Azure Statis Web Apps](https://azure.microsoft.com/fr-fr/services/app-service/static/)
 - [Github](https://github.com)
 - [VScode](https://code.visualstudio.com/)
 - [Markdown](https://daringfireball.net/projects/markdown/)
 
-Hugo permets de générer un site statique sur base de configurations et de fichiers Markdown. L'avantage de ce système est d'avoir besoin de très peu de ressources pour servir le site, il n'y aura que très peu (voir pas) de calcul à faire, autant du côté serveur que du côté client.
-
-Concernant Markdown, il s'agit d'un language balisé plutôt simple à utiliser. Il a pour but de fournir un document facile à lire et à interpréter et transformable en html, pdf,... C'est ce language qui est utilisé traditionnellement dans les repos git pour composer le fichier README.md (et tout autre doc faisant partie du source control).
+Hugo is an open-source static site generators based on Markdown. It allows you to generate static pages that requieres very few resources to serve. There will be some html, some css and some JS, and that's pretty much it. This will garantee an easy to maintain and very responsive website.
 
 ## Hugo
 
-Hugo est assez simple à installer: https://gohugo.io/getting-started/installing
+Installation is pretty easy: https://gohugo.io/getting-started/installing
 
-Une fois en place, il vous suffira de créer un nouveau site à l'aide de votre terminal préféré: `hugo new site newsite`.
+Once done, simply generate a new website: `hugo new site newsite` and you're ready to go.
 
-Pour l'utilisation basique de Hugo, je vous renvoi au [tuto quick start](https://gohugo.io/getting-started/quick-start/) du projet.
+Now we'll add a theme from the [themes repo of HUGO](https://themes.gohugo.io/), simply follow the steps in the theme doc to install it and configure you're site.
+
+You can preview your site using `hugo server -d` and browse your localhost.
+
+Once it's ready, generate your site using `hugo`and push the files in your repo.
 
 ## Azure
 
-Concernant l'hébergement, j'utilise une web app dans Azure spécialement créée pour du contenu static. Innutile de payer pour le support de framework innutilisés comme le php, .net ou autre, il n'y aura ici que de l'htlm et un peu de javascript.
+For the hosting, you can use [git pages](https://pages.github.com/) but I wanted to try the new [Azure Static App Service](https://azure.microsoft.com/en-us/services/app-service/static/). Both options are free, for now.
 
-Cette technologie est actuellement en preview et gratuite. Il suffit d'avoir un abonnement Azure pour se lancer. 
+Azure Static App Service will generate ssl certificate for you for free once you [add a custome domain](https://docs.microsoft.com/en-us/azure/static-web-apps/custom-domain).
 
-La configuration de cet artefact est super simple. On pourra lui ajouter un domaine custo (ici agaru.be) en suivant l'assistant. Le certificat https sera automatiquement ajouté.
-
-Une fois en place, vous pouvez déposer des fichiers htlm ou mieux... Automatiser le déploiement!
+Now, let's automate deployment with git actions!
 
 ## Git workflow & deploy
 
-Mon code est hébergé dans github, ce qui va me permettre d'automatiser la publication des nouvelles versions. Contrairement à un site web dynamique comme on à l'habitude d'en croiser (Wordpress, Drupal,...), chaque mise à jour du contenu va m'obliger à publier le site. Et comme chaque action manuelle, cela peut vite devenir redondant.
+I don't want to copy the files on the static wep app each time, it's gonna be a pain. My code is on github and I'm using git actions to automate deployment. Instead of managing content in a CMS like it's done with Wordpress or Drupal, you'll have to generate content with HUGO and push the new files in the repo. 
 
-Sur les principes d'automatisations, qu'on peut retrouver dans la philosphie devops par exemple, j'ai utilisé workflow github afin de pousser automatiquement mon code dans l'app service.
+While creating my static web app, I'll just link it to my GitHub like this:
+![screenshot du portail azure](/img/hosting/webappstatic.png)
 
-Pour se faire, après avoir créé mon repo dans github, il me suffit de me connecter à mon compte github pendant la création de mon app service:
-![screenshot du portail azure](img/hosting/webappstatic.png)
+As you can see, HUGO is already in the preset, which makes things a breeze.
 
-Après avoir choisi son organisation, le repo et la branche, Azure va automatiquement ajouter un dossier .github contenant votre workflow dans le source control.
+Now, Azure is gonna generate a yaml file in my repo, generate and configure the spn with the good rights and configure the git action for me.
 
-Il ne reste maintenant qu'à générer vos pages avec la CLI de hugo (voir le [tuto quick start](https://gohugo.io/getting-started/quick-start/)), commiter et pusher vos changements. Tout sera déployé automatiquement sur votre site quelques minutes plus tard.
+Now, all you need to do is push a new version of you site generated with HUGO in your repo and voilà!

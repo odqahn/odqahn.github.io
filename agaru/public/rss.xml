@@ -12,7 +12,7 @@
         <description>agaru.be</description>
         <generator>Hugo 0.81.0 https://gohugo.io/</generator>
         
-            <language>fr</language>
+            <language>en</language>
         
         
             <managingEditor>simon@agaru.be (Simon)</managingEditor>
@@ -23,112 +23,10 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Thu, 04 Mar 2021 20:54:35 &#43;0100</lastBuildDate>
+        <lastBuildDate>Fri, 05 Mar 2021 22:10:52 &#43;0100</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://www.agaru.be/rss.xml" />
         
-        
-            <item>
-                <title>Azure Devops &amp; VMSS - part1</title>
-                <link>https://www.agaru.be/posts/azure-devops-vmss-p1/</link>
-                <guid isPermaLink="true">https://www.agaru.be/posts/azure-devops-vmss-p1/</guid>
-                <pubDate>Thu, 04 Mar 2021 20:29:11 &#43;0100</pubDate>
-                
-                    <author>simon@agaru.be (Simon)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
-                
-                    <description>&lt;h1 id=&#34;azure-devops-et-vmss-agents&#34;&gt;Azure DevOps et VMSS agents&lt;/h1&gt;
-&lt;p&gt;Bonne nouvelle, Azure DevOps permets maintenant d&amp;rsquo;utiliser des scale set pour les agents. Cela va apporter très facilement plus de flexibilités que les self hosted et nous permettre de faire des montages assez sympas.&lt;/p&gt;
-&lt;p&gt;Dans cette série de post nous allons :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Voir en quoi un VMSS va nous apporter des choses (use cases)&lt;/li&gt;
-&lt;li&gt;Créer un VMSS et le lier à Azure DevOps&lt;/li&gt;
-&lt;li&gt;Explorer les différentes options&lt;/li&gt;
-&lt;li&gt;Créer une image custo avec Docker pour pouvoir builder nos petits Dockerfiles&lt;/li&gt;
-&lt;li&gt;Explorer le git des agents de build de Microsoft et builder l&amp;rsquo;image des self hosted pour notre VMSS&lt;/li&gt;
-&lt;li&gt;Aborder quelques points de sécurité et faire un peu de custo avancée avec ces images&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Commençons directement !&lt;/p&gt;
-&lt;h2 id=&#34;pourquoi-les-vmss-cest-cool&#34;&gt;Pourquoi les VMSS, c&amp;rsquo;est cool?&lt;/h2&gt;
-&lt;h3 id=&#34;ressources-privées&#34;&gt;Ressources privées&lt;/h3&gt;
-&lt;p&gt;A moins d&amp;rsquo;être une start up ou d&amp;rsquo;avoir foncé dans le cloud, votre infra est certainement composée d&amp;rsquo;un mélange de pleins de choses. On va y retrouver des VM, dans des VNet, des ressources publiques mais aussi des ressources privées. Depuis quelques temps, Azure propose de privatiser pas mal de ressources grâce aux &lt;a href=&#34;https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview&#34;&gt;private endpoint&lt;/a&gt; par exemple.&lt;/p&gt;
-&lt;p&gt;Ce sont ces ressources privées et isolée d&amp;rsquo;internet qui nous intéressent. Pour l&amp;rsquo;instant, contacter celles-ci nécessitaient   de devoir créer un agent self hosted en créant un VM, en installant un agent. Il fallait ensuite monitorer celui-ci, le maintenir etc.&lt;/p&gt;
-&lt;p&gt;Grâce au VMSS, on va disposer d&amp;rsquo;un potentiel élastique pour faire tourner nos pipelines et pouvoir rassembler le meilleur des deux mondes : des images construites dynamiquement dans une infra privée. Un seul pool d&amp;rsquo;agent qui va pouvoir builder du code sans devoir faire la maintenance de tous les framework, vous offrir la possibilité de réaliser des tests d&amp;rsquo;intégration directement sur votre non prod, de faire des releases sur des IIS internes,&amp;hellip;&lt;/p&gt;
-&lt;h3 id=&#34;le-cout&#34;&gt;Le cout&lt;/h3&gt;
-&lt;p&gt;A noter aussi, dans un VMSS, vous ne payez que l&amp;rsquo;uptime de vos VMs (et un peu de stockage, de traffic,&amp;hellip; mais c&amp;rsquo;est surtout l&amp;rsquo;utime). Grâce au VMSS et à l&amp;rsquo;intégration dans DevOps, on va pouvoir jouer là-dessus pour ne payer que ce qu&amp;rsquo;on utilise réellement, et pas pour 10 agents self hosted dispo 24/24 7/7 ou une VM qui doit tourner tout le temps.&lt;/p&gt;
-&lt;p&gt;Ici, c&amp;rsquo;est DevOps qui va piloter le scale set et provisionner des agents quand un build est lancé. On pourra lui donner quelques règles comme la possibilité de garder des agents en stand by ou l&amp;rsquo;idle time avant de tuer une instance par exemple. Nous explorerons les possibilités lors de la configuration.&lt;/p&gt;
-&lt;h3 id=&#34;custo&#34;&gt;Custo!&lt;/h3&gt;
-&lt;p&gt;Les selfs hosted ne sont pas facilement customisable. Bien sûr, vous pouvez ajouter des outils dans vos pipeline via une commande PowerShell ou bash mais cela représente un cout de temps, qui, pour certains outils, peut être assez long.&lt;/p&gt;
-&lt;p&gt;Vous aimeriez peut-être que l&amp;rsquo;agent Ubuntu 20.04 utilise java 8 plutôt que java 11 par défaut? C&amp;rsquo;est possible (et ça sera d&amp;rsquo;ailleurs ce qu&amp;rsquo;on fera dans le dernier post).&lt;/p&gt;
-&lt;h2 id=&#34;la-suite&#34;&gt;La suite?&lt;/h2&gt;
-&lt;p&gt;Prochain post, création du VMSS et configuration dans DevOps avec une petite application d&amp;rsquo;exemple!&lt;/p&gt;
-</description>
-                
-                
-                
-                
-                
-                    
-                        
-                    
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title>Hosting</title>
-                <link>https://www.agaru.be/posts/hosting/</link>
-                <guid isPermaLink="true">https://www.agaru.be/posts/hosting/</guid>
-                <pubDate>Mon, 01 Mar 2021 18:27:12 &#43;0100</pubDate>
-                
-                    <author>simon@agaru.be (Simon)</author>
-                
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
-                
-                    <description>&lt;h1 id=&#34;bienvenu-chez-moi&#34;&gt;Bienvenu chez moi!&lt;/h1&gt;
-&lt;p&gt;Pour mon premier post, parlons de l&amp;rsquo;hébergement de ce site.&lt;/p&gt;
-&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
-&lt;p&gt;Les outils utilisés sont:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://azure.microsoft.com/fr-fr/services/app-service/static/&#34;&gt;Azure Statis Web Apps&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com&#34;&gt;Github&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VScode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://daringfireball.net/projects/markdown/&#34;&gt;Markdown&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Hugo permets de générer un site statique sur base de configurations et de fichiers Markdown. L&amp;rsquo;avantage de ce système est d&amp;rsquo;avoir besoin de très peu de ressources pour servir le site, il n&amp;rsquo;y aura que très peu (voir pas) de calcul à faire, autant du côté serveur que du côté client.&lt;/p&gt;
-&lt;p&gt;Concernant Markdown, il s&amp;rsquo;agit d&amp;rsquo;un language balisé plutôt simple à utiliser. Il a pour but de fournir un document facile à lire et à interpréter et transformable en html, pdf,&amp;hellip; C&amp;rsquo;est ce language qui est utilisé traditionnellement dans les repos git pour composer le fichier README.md (et tout autre doc faisant partie du source control).&lt;/p&gt;
-&lt;h2 id=&#34;hugo&#34;&gt;Hugo&lt;/h2&gt;
-&lt;p&gt;Hugo est assez simple à installer: &lt;a href=&#34;https://gohugo.io/getting-started/installing&#34;&gt;https://gohugo.io/getting-started/installing&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Une fois en place, il vous suffira de créer un nouveau site à l&amp;rsquo;aide de votre terminal préféré: &lt;code&gt;hugo new site newsite&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Pour l&amp;rsquo;utilisation basique de Hugo, je vous renvoi au &lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;tuto quick start&lt;/a&gt; du projet.&lt;/p&gt;
-&lt;h2 id=&#34;azure&#34;&gt;Azure&lt;/h2&gt;
-&lt;p&gt;Concernant l&amp;rsquo;hébergement, j&amp;rsquo;utilise une web app dans Azure spécialement créée pour du contenu static. Innutile de payer pour le support de framework innutilisés comme le php, .net ou autre, il n&amp;rsquo;y aura ici que de l&amp;rsquo;htlm et un peu de javascript.&lt;/p&gt;
-&lt;p&gt;Cette technologie est actuellement en preview et gratuite. Il suffit d&amp;rsquo;avoir un abonnement Azure pour se lancer.&lt;/p&gt;
-&lt;p&gt;La configuration de cet artefact est super simple. On pourra lui ajouter un domaine custo (ici agaru.be) en suivant l&amp;rsquo;assistant. Le certificat https sera automatiquement ajouté.&lt;/p&gt;
-&lt;p&gt;Une fois en place, vous pouvez déposer des fichiers htlm ou mieux&amp;hellip; Automatiser le déploiement!&lt;/p&gt;
-&lt;h2 id=&#34;git-workflow--deploy&#34;&gt;Git workflow &amp;amp; deploy&lt;/h2&gt;
-&lt;p&gt;Mon code est hébergé dans github, ce qui va me permettre d&amp;rsquo;automatiser la publication des nouvelles versions. Contrairement à un site web dynamique comme on à l&amp;rsquo;habitude d&amp;rsquo;en croiser (Wordpress, Drupal,&amp;hellip;), chaque mise à jour du contenu va m&amp;rsquo;obliger à publier le site. Et comme chaque action manuelle, cela peut vite devenir redondant.&lt;/p&gt;
-&lt;p&gt;Sur les principes d&amp;rsquo;automatisations, qu&amp;rsquo;on peut retrouver dans la philosphie devops par exemple, j&amp;rsquo;ai utilisé workflow github afin de pousser automatiquement mon code dans l&amp;rsquo;app service.&lt;/p&gt;
-&lt;p&gt;Pour se faire, après avoir créé mon repo dans github, il me suffit de me connecter à mon compte github pendant la création de mon app service:
-&lt;img src=&#34;img/hosting/webappstatic.png&#34; alt=&#34;screenshot du portail azure&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Après avoir choisi son organisation, le repo et la branche, Azure va automatiquement ajouter un dossier .github contenant votre workflow dans le source control.&lt;/p&gt;
-&lt;p&gt;Il ne reste maintenant qu&amp;rsquo;à générer vos pages avec la CLI de hugo (voir le &lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;tuto quick start&lt;/a&gt;), commiter et pusher vos changements. Tout sera déployé automatiquement sur votre site quelques minutes plus tard.&lt;/p&gt;
-</description>
-                
-                
-                
-                
-                
-                    
-                        
-                    
-                        
-                    
-                
-            </item>
         
     </channel>
 </rss>

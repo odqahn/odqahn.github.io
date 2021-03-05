@@ -1,3 +1,6 @@
 [submodule "agaru/themes/meme"]
 	path = agaru/themes/meme
 	url = https://github.com/reuixiy/hugo-theme-meme.git
+[submodule "agaru/themes/hugo-theme-stack"]
+	path = agaru/themes/hugo-theme-stack
+	url = https://github.com/CaiJimmy/hugo-theme-stack.git

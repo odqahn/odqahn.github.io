@@ -3,7 +3,7 @@
 
 baseURL = "https://www.agaru.be/"
 title = "上がる"
-languageCode = "fr"
+languageCode = "en"
 hasCJKLanguage = false
 # Copyright information (Markdown supported)
 copyright = "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)"
@@ -15,7 +15,7 @@ theme = "meme"
 newContentEditor = ""
 
 # i18n
-defaultContentLanguage = "fr"
+defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
 # Pluralize titles in lists?
@@ -100,7 +100,7 @@ uglyURLs = false
     # Motto or introduction
     motto = "上がる"
     # Avatar
-    avatar = "/icons/apple-touch-icon.png"
+    avatar = "/img/avatar.png"
     # Personal website, default: baseURL
     website = "https://www.agaru.be"
 

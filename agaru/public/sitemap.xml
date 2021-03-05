@@ -2,20 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.agaru.be/posts/azure-devops-vmss-p1/</loc>
-    <lastmod>2021-03-04T20:54:05+01:00</lastmod>
-  </url><url>
-    <loc>https://www.agaru.be/posts/</loc>
-    <lastmod>2021-03-04T20:54:05+01:00</lastmod>
-  </url><url>
-    <loc>https://www.agaru.be/</loc>
-    <lastmod>2021-03-04T20:54:05+01:00</lastmod>
-  </url><url>
-    <loc>https://www.agaru.be/posts/hosting/</loc>
-    <lastmod>2021-03-04T20:54:05+01:00</lastmod>
-  </url><url>
     <loc>https://www.agaru.be/categories/</loc>
   </url><url>
     <loc>https://www.agaru.be/tags/</loc>
+  </url><url>
+    <loc>https://www.agaru.be/</loc>
   </url>
 </urlset>
