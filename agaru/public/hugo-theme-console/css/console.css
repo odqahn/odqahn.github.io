@@ -168,6 +168,12 @@ figure {
     color: var(--global-font-color);
 }
 
+img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
 .image-grid {
     display: grid;
     grid-template-rows: auto;
