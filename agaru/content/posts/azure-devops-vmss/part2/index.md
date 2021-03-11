@@ -26,7 +26,7 @@ For a VMSS, you'll need :
 * A VNet
 * A dedicated subnet (optional but recommended)
 
-Get your subnet ID by adding /subnets/nameofyoursubnet after the ID of the VNet of by using Azure CLI:
+Get your subnet ID by adding /subnets/nameofyoursubnet after the ID of the VNet or by using Azure CLI:
 ```
 vnetRgName=NAME_OF_THE_RG_VNET
 vnetName=NAME_OF_THE_VNET
@@ -71,4 +71,8 @@ Select *Azure virtual machine scale set* as type, select a projet (this is neede
 Now, you can give it a name, put the min/max number of instances and the idle time. The 3 values can be changed later on.
 
 ## All done
-Azure DevOps is now the owner of the scale set. An extension will be added to install and configure the agent every time an instance is fired up. If you go on your VMSS, you'll the first 2 instances getting deleted and 3 new ones being provisioned. They be killed after the idle time so, do not worry too much about the cost here.
+Azure DevOps is now the owner of the scale set. An extension will be added to install and configure the agent every time an instance is fired up. If you go on your VMSS, you'll the first 2 instances getting deleted and 3 new ones being provisioned. They'll be killed after the idle time so, do not worry too much about the cost here.
+
+# Resources
+- [az cli vmms](https://docs.microsoft.com/en-us/cli/azure/vmss?view=azure-cli-latest)
+- [Azure DevOps & VMSS](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/scale-set-agents?view=azure-devops)
