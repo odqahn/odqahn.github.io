@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>上がる</title>
+    <link>https://www.agaru.be/</link>
+    <description>Recent content on 上がる</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 11 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.agaru.be/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The work at home watcher.</title>
+      <link>https://www.agaru.be/photos/wah/</link>
+      <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.agaru.be/photos/wah/</guid>
+      <description>The work at home watcher.</description>
+    </item>
+    
+    <item>
+      <title>Hosting</title>
+      <link>https://www.agaru.be/posts/hosting/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.agaru.be/posts/hosting/</guid>
+      <description>Welcome! Here&amp;rsquo;s a first post about this webiste.
+Intro Tools:
+ Hugo Azure Statis Web Apps Github VScode Markdown  Hugo is an open-source static site generators based on Markdown. It allows you to generate static pages that requieres very few resources to serve. There will be some html, some css and some JS, and that&amp;rsquo;s pretty much it. This will garantee an easy to maintain and very responsive website.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://www.agaru.be/about/</link>
+      <pubDate>Sat, 05 Nov 2016 21:05:33 +0530</pubDate>
+      
+      <guid>https://www.agaru.be/about/</guid>
+      <description>Another tech blog. 上がる: to climb; to rise; to go up; to come up; to ascend; to advance
+Who am I? Hi, I&amp;rsquo;m Simon Michelizza, a 34 year old cloud architect. I&amp;rsquo;m mostly working with Azure, devops, Intune, AKS,&amp;hellip; And this is about sharing the good, and mostly the ugly so you don&amp;rsquo;t have too.</description>
+    </item>
+    
+  </channel>
+</rss>

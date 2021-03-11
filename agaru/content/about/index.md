@@ -3,7 +3,7 @@ date = "2016-11-05T21:05:33+05:30"
 title = "About"
 +++
 Another tech blog.
-*__上がる Meaning:__ to climb; to rise; to go up; to come up; to ascend; to advance*
+*__上がる:__ to climb; to rise; to go up; to come up; to ascend; to advance*
 
 ## Who am I?
 
