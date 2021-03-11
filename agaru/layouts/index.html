@@ -13,8 +13,9 @@ Another tech blog. <i><b>上がる:</b> to climb; to rise; to go up; to come up;
     {{ range first 3 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}
         <div class="post">
             <p>
-                <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}</div>
+                <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}<br>{{ .ReadingTime }}-min read</div>
                 <h1><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
+                
                 {{ .Description }}
             </p>
         </div>    
