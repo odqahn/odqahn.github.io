@@ -8,12 +8,35 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 11 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.agaru.be/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Azure Devops &amp; VMSS - part2</title>
+      <link>https://www.agaru.be/posts/azure-devops-vmss/part2/</link>
+      <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.agaru.be/posts/azure-devops-vmss/part2/</guid>
+      <description>Azure DevOps &amp;amp; VMSS agents Good news everyone! Azure DevOps now supports VMSS as agent.
+In this series of posts, we&amp;rsquo;ll cover:
+ Why use a VMSS with Azure DevOps? How to create and configure a simple VMSS. Customising the VMSS. Use Microsoft&amp;rsquo;s script to create an image for our VMSS. Getting freaky with those images. Some security aspects.  Azure CLI First, let&amp;rsquo;s install Azure CLI.
+Create the VMSS We can now create the VMSS.</description>
+    </item>
+    
+    <item>
       <title>The work at home watcher.</title>
       <link>https://www.agaru.be/photos/wah/</link>
       <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.agaru.be/photos/wah/</guid>
       <description>The work at home watcher.</description>
+    </item>
+    
+    <item>
+      <title>Azure Devops &amp; VMSS - part1</title>
+      <link>https://www.agaru.be/posts/azure-devops-vmss/part1/</link>
+      <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.agaru.be/posts/azure-devops-vmss/part1/</guid>
+      <description>Azure DevOps &amp;amp; VMSS agents Good news everyone! Azure DevOps now supports VMSS as agent.
+In this series of posts, we&amp;rsquo;ll cover:
+ Why use a VMSS with Azure DevOps? How to create and configure a simple VMSS. Customising the VMSS. Use Microsoft&amp;rsquo;s script to create an image for our VMSS. Getting freaky with those images. Some security aspects.  Why use VMSS with Azure DevOps? Private resources Unless you&amp;rsquo;re a startup or have committed to the cloud 200%, you&amp;rsquo;re likely to have private resources like IIS servers in an internal zone, an instance of SonarQube CE that you do not want to expose on the internet ever (why would you even do that?</description>
     </item>
     
     <item>
