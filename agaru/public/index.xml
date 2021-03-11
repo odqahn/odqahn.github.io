@@ -20,15 +20,6 @@ Create the VMSS We can now create the VMSS.</description>
     </item>
     
     <item>
-      <title>The work at home watcher.</title>
-      <link>https://www.agaru.be/photos/wah/</link>
-      <pubDate>Thu, 11 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.agaru.be/photos/wah/</guid>
-      <description>The work at home watcher.</description>
-    </item>
-    
-    <item>
       <title>Azure Devops &amp; VMSS - part1</title>
       <link>https://www.agaru.be/posts/azure-devops-vmss/part1/</link>
       <pubDate>Fri, 05 Mar 2021 00:00:00 +0000</pubDate>
@@ -56,7 +47,8 @@ Intro Tools:
       <pubDate>Sat, 05 Nov 2016 21:05:33 +0530</pubDate>
       
       <guid>https://www.agaru.be/about/</guid>
-      <description>Another tech blog. 上がる: to climb; to rise; to go up; to come up; to ascend; to advance
+      <description>Another tech blog.
+上がる: to climb; to rise; to go up; to come up; to ascend; to advance
 Who am I? Hi, I&amp;rsquo;m Simon Michelizza, a 34 year old cloud architect. I&amp;rsquo;m mostly working with Azure, devops, Intune, AKS,&amp;hellip; And this is about sharing the good, and mostly the ugly so you don&amp;rsquo;t have too.</description>
     </item>
     

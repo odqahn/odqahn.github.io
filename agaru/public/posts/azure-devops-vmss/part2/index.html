@@ -77,7 +77,7 @@ Mar. 11, 2021
 <li>A VNet</li>
 <li>A dedicated subnet (optional but recommended)</li>
 </ul>
-<p>Get your subnet ID by adding /subnets/nameofyoursubnet after the ID of the VNet of by using Azure CLI:</p>
+<p>Get your subnet ID by adding /subnets/nameofyoursubnet after the ID of the VNet or by using Azure CLI:</p>
 <pre><code>vnetRgName=NAME_OF_THE_RG_VNET
 vnetName=NAME_OF_THE_VNET
 subnetName=NAME_OF_THE_SUBNET
@@ -111,7 +111,12 @@ az vmss create \
 <p>Select <em>Azure virtual machine scale set</em> as type, select a projet (this is needed to store the SPN, see this projet like to mother projet of the scale set. You can the project were you&rsquo;re gonna store the code of this lab), the Azure subscription where the scale set has been created and finally, the scale set.</p>
 <p>Now, you can give it a name, put the min/max number of instances and the idle time. The 3 values can be changed later on.</p>
 <h2 id="all-done">All done</h2>
-<p>Azure DevOps is now the owner of the scale set. An extension will be added to install and configure the agent every time an instance is fired up. If you go on your VMSS, you&rsquo;ll the first 2 instances getting deleted and 3 new ones being provisioned. They be killed after the idle time so, do not worry too much about the cost here.</p>
+<p>Azure DevOps is now the owner of the scale set. An extension will be added to install and configure the agent every time an instance is fired up. If you go on your VMSS, you&rsquo;ll the first 2 instances getting deleted and 3 new ones being provisioned. They&rsquo;ll be killed after the idle time so, do not worry too much about the cost here.</p>
+<h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/cli/azure/vmss?view=azure-cli-latest">az cli vmms</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/scale-set-agents?view=azure-devops">Azure DevOps &amp; VMSS</a></li>
+</ul>
 
 
 
