@@ -1,6 +1,7 @@
 +++
 title = "Azure Devops & VMSS - part2"
 date = "2021-03-11"
+description = "Creating the VMSS"
 +++
 
 # Azure DevOps & VMSS agents

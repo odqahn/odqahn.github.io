@@ -15,7 +15,7 @@ Another tech blog. <i><b>上がる:</b> to climb; to rise; to go up; to come up;
             <p>
                 <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}</div>
                 <h1><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
-                {{ .Summary }}
+                {{ .Description }}
             </p>
         </div>    
     {{ end }}
