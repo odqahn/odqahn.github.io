@@ -1,6 +1,5 @@
 baseurl = "https://www.agaru.be/"
 title = "上がる"
-theme = "hugo-theme-console"
 languageCode = "en-us"
 
 [params]
@@ -9,7 +8,7 @@ languageCode = "en-us"
 
   # Set the animation style -- https://animate.style/
   # To disable animations, please remove or comment animationStyle parameter
-  animateStyle = "animated zoomIn fast" 
+  animateStyle = "animated fadeIn fast" 
 
   [[params.navlinks]]
   name = "about/"
@@ -18,6 +17,3 @@ languageCode = "en-us"
   [[params.navlinks]]
   name = "posts/"
   url = "posts/"
-  
-  # [[params.navlinks]]
-  # name = "photos/"
