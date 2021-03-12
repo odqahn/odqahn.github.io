@@ -1,4 +1,4 @@
-baseurl = "https://www.agaru.be"
+baseurl = "https://www.agaru.be/"
 title = "上がる"
 theme = "hugo-theme-console"
 languageCode = "en-us"
