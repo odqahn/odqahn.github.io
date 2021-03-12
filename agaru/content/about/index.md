@@ -13,4 +13,4 @@ Hi, I'm Simon Michelizza, a 34 year old cloud architect. I'm mostly working with
 
 # Links
 - [LinkedIn](https://www.linkedin.com/in/simon-michelizza/)
-- [GitHub](github.com/odqahn/)
+- [GitHub](https://github.com/odqahn/)
