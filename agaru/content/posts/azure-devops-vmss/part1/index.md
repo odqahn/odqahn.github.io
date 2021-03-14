@@ -5,15 +5,16 @@ description = "An introduction"
 +++
 
 # Azure DevOps & VMSS agents
+![farnsworth.png](farnsworth.png)
 Good news everyone! Azure DevOps now supports VMSS as agent.
 
 In this series of posts, we'll cover:
 * Why use a VMSS with Azure DevOps?
 * How to create and configure a simple VMSS.
-* Customising the VMSS.
+* Customizing the VMSS.
 * Use Microsoft's script to create an image for our VMSS.
 * Getting freaky with those images.
-* Some security aspects.
+* Security aspects.
 
 ## Why use VMSS with Azure DevOps?
 ### Private resources

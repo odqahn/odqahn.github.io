@@ -6,7 +6,18 @@
     <description>Recent content in Posts on 上がる</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.agaru.be/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.agaru.be/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure Devops &amp; VMSS - part3</title>
+      <link>https://www.agaru.be/posts/azure-devops-vmss/part3/</link>
+      <pubDate>Sun, 14 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.agaru.be/posts/azure-devops-vmss/part3/</guid>
+      <description>Azure DevOps &amp;amp; VMSS agents Good news everyone! Azure DevOps now supports VMSS as agent.
+In this series of posts, we&amp;rsquo;ll cover:
+ Why use a VMSS with Azure DevOps? How to create and configure a simple VMSS. Customizing the VMSS. Use Microsoft&amp;rsquo;s script to create an image for our VMSS. Getting freaky with those images. Security aspects.  Custo! So far, we&amp;rsquo;ve taken the Ubuntu LTS image and fed it to a VMSS.</description>
+    </item>
+    
     <item>
       <title>Azure Devops &amp; VMSS - part2</title>
       <link>https://www.agaru.be/posts/azure-devops-vmss/part2/</link>
@@ -15,7 +26,7 @@
       <guid>https://www.agaru.be/posts/azure-devops-vmss/part2/</guid>
       <description>Azure DevOps &amp;amp; VMSS agents Good news everyone! Azure DevOps now supports VMSS as agent.
 In this series of posts, we&amp;rsquo;ll cover:
- Why use a VMSS with Azure DevOps? How to create and configure a simple VMSS. Customising the VMSS. Use Microsoft&amp;rsquo;s script to create an image for our VMSS. Getting freaky with those images. Some security aspects.  Azure CLI First, let&amp;rsquo;s install Azure CLI.
+ Why use a VMSS with Azure DevOps? How to create and configure a simple VMSS. Customizing the VMSS. Use Microsoft&amp;rsquo;s script to create an image for our VMSS. Getting freaky with those images. Security aspects.  Azure CLI First, let&amp;rsquo;s install Azure CLI.
 Create the VMSS We can now create the VMSS.</description>
     </item>
     
@@ -27,7 +38,7 @@ Create the VMSS We can now create the VMSS.</description>
       <guid>https://www.agaru.be/posts/azure-devops-vmss/part1/</guid>
       <description>Azure DevOps &amp;amp; VMSS agents Good news everyone! Azure DevOps now supports VMSS as agent.
 In this series of posts, we&amp;rsquo;ll cover:
- Why use a VMSS with Azure DevOps? How to create and configure a simple VMSS. Customising the VMSS. Use Microsoft&amp;rsquo;s script to create an image for our VMSS. Getting freaky with those images. Some security aspects.  Why use VMSS with Azure DevOps? Private resources Unless you&amp;rsquo;re a startup or have committed to the cloud 200%, you&amp;rsquo;re likely to have private resources like IIS servers in an internal zone, an instance of SonarQube CE that you do not want to expose on the internet ever (why would you even do that?</description>
+ Why use a VMSS with Azure DevOps? How to create and configure a simple VMSS. Customizing the VMSS. Use Microsoft&amp;rsquo;s script to create an image for our VMSS. Getting freaky with those images. Security aspects.  Why use VMSS with Azure DevOps? Private resources Unless you&amp;rsquo;re a startup or have committed to the cloud 200%, you&amp;rsquo;re likely to have private resources like IIS servers in an internal zone, an instance of SonarQube CE that you do not want to expose on the internet ever (why would you even do that?</description>
     </item>
     
     <item>

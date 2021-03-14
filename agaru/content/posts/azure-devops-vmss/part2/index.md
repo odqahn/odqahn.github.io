@@ -10,10 +10,10 @@ Good news everyone! Azure DevOps now supports VMSS as agent.
 In this series of posts, we'll cover:
 * ~~Why use a VMSS with Azure DevOps?~~
 * How to create and configure a simple VMSS.
-* Customising the VMSS.
+* Customizing the VMSS.
 * Use Microsoft's script to create an image for our VMSS.
 * Getting freaky with those images.
-* Some security aspects.
+* Security aspects.
 
 ## Azure CLI
 First, let's [install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli). 
@@ -27,36 +27,39 @@ For a VMSS, you'll need :
 * A dedicated subnet (optional but recommended)
 
 Get your subnet ID by adding /subnets/nameofyoursubnet after the ID of the VNet or by using Azure CLI:
-```
+```bash
 vnetRgName=NAME_OF_THE_RG_VNET
 vnetName=NAME_OF_THE_VNET
 subnetName=NAME_OF_THE_SUBNET
+location=westeurope
+az group create --name $vnetRgName --location $location
 subnetId=$(az network vnet subnet list -g $vnetRgName --vnet-name $vnetName --query "[?contains(name, '$subnetName')].id" -o tsv)
 ```
 
 Now, set a default username, a name for your VMSS, a resource group (it needs to exist before this command) and the subnet ID you got just before.
-```
+```bash
 user=YOUR_USERNAME
 vmssName=A_NAME_FOR_VMSS
 rgName=NAME_OF_THE_RG
 subnetId=ID_OF_YOUR_SUBNET
+az group create --name $rgName --location $location
 az vmss create \
---admin-username $user \
---authentication-type SSH \
---disable-overprovision \
---image UbuntuLTS \
---instance-count 2 \
---load-balancer "" \
---name $vmssName \
---nsg "" \
---platform-fault-domain-count 1 \
---public-ip-address "" \
---resource-group $rgName \
---single-placement-group false \
---storage-sku Standard_LRS \
---subnet $subnetId \
---upgrade-policy-mode manual \
---vm-sku "Standard_D2_v3"
+    --admin-username $user \
+    --authentication-type SSH \
+    --disable-overprovision \
+    --image UbuntuLTS \
+    --instance-count 2 \
+    --load-balancer "" \
+    --name $vmssName \
+    --nsg "" \
+    --platform-fault-domain-count 1 \
+    --public-ip-address "" \
+    --resource-group $rgName \
+    --single-placement-group false \
+    --storage-sku Standard_LRS \
+    --subnet $subnetId \
+    --upgrade-policy-mode manual \
+    --vm-sku "Standard_D2_v3"
 ```
 
 And voilà, you have your VMSS. You need to make sure this VMSS can access internet on 80/443 TCP and you're good to go. We'll talk security later.

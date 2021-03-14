@@ -67,10 +67,10 @@ Mar. 11, 2021
 <ul>
 <li><del>Why use a VMSS with Azure DevOps?</del></li>
 <li>How to create and configure a simple VMSS.</li>
-<li>Customising the VMSS.</li>
+<li>Customizing the VMSS.</li>
 <li>Use Microsoft&rsquo;s script to create an image for our VMSS.</li>
 <li>Getting freaky with those images.</li>
-<li>Some security aspects.</li>
+<li>Security aspects.</li>
 </ul>
 <h2 id="azure-cli">Azure CLI</h2>
 <p>First, let&rsquo;s <a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">install Azure CLI</a>.</p>
@@ -83,33 +83,36 @@ Mar. 11, 2021
 <li>A dedicated subnet (optional but recommended)</li>
 </ul>
 <p>Get your subnet ID by adding /subnets/nameofyoursubnet after the ID of the VNet or by using Azure CLI:</p>
-<pre><code>vnetRgName=NAME_OF_THE_RG_VNET
-vnetName=NAME_OF_THE_VNET
-subnetName=NAME_OF_THE_SUBNET
-subnetId=$(az network vnet subnet list -g $vnetRgName --vnet-name $vnetName --query &quot;[?contains(name, '$subnetName')].id&quot; -o tsv)
-</code></pre><p>Now, set a default username, a name for your VMSS, a resource group (it needs to exist before this command) and the subnet ID you got just before.</p>
-<pre><code>user=YOUR_USERNAME
-vmssName=A_NAME_FOR_VMSS
-rgName=NAME_OF_THE_RG
-subnetId=ID_OF_YOUR_SUBNET
-az vmss create \
---admin-username $user \
---authentication-type SSH \
---disable-overprovision \
---image UbuntuLTS \
---instance-count 2 \
---load-balancer &quot;&quot; \
---name $vmssName \
---nsg &quot;&quot; \
---platform-fault-domain-count 1 \
---public-ip-address &quot;&quot; \
---resource-group $rgName \
---single-placement-group false \
---storage-sku Standard_LRS \
---subnet $subnetId \
---upgrade-policy-mode manual \
---vm-sku &quot;Standard_D2_v3&quot;
-</code></pre><p>And voilà, you have your VMSS. You need to make sure this VMSS can access internet on 80/443 TCP and you&rsquo;re good to go. We&rsquo;ll talk security later.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vnetRgName<span style="color:#f92672">=</span>NAME_OF_THE_RG_VNET
+vnetName<span style="color:#f92672">=</span>NAME_OF_THE_VNET
+subnetName<span style="color:#f92672">=</span>NAME_OF_THE_SUBNET
+location<span style="color:#f92672">=</span>westeurope
+az group create --name $vnetRgName --location $location
+subnetId<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>az network vnet subnet list -g $vnetRgName --vnet-name $vnetName --query <span style="color:#e6db74">&#34;[?contains(name, &#39;</span>$subnetName<span style="color:#e6db74">&#39;)].id&#34;</span> -o tsv<span style="color:#66d9ef">)</span>
+</code></pre></div><p>Now, set a default username, a name for your VMSS, a resource group (it needs to exist before this command) and the subnet ID you got just before.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user<span style="color:#f92672">=</span>YOUR_USERNAME
+vmssName<span style="color:#f92672">=</span>A_NAME_FOR_VMSS
+rgName<span style="color:#f92672">=</span>NAME_OF_THE_RG
+subnetId<span style="color:#f92672">=</span>ID_OF_YOUR_SUBNET
+az group create --name $rgName --location $location
+az vmss create <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --admin-username $user <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --authentication-type SSH <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --disable-overprovision <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --image UbuntuLTS <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --instance-count <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --load-balancer <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --name $vmssName <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --nsg <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --platform-fault-domain-count <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --public-ip-address <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --resource-group $rgName <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --single-placement-group false <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --storage-sku Standard_LRS <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --subnet $subnetId <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --upgrade-policy-mode manual <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    --vm-sku <span style="color:#e6db74">&#34;Standard_D2_v3&#34;</span>
+</code></pre></div><p>And voilà, you have your VMSS. You need to make sure this VMSS can access internet on 80/443 TCP and you&rsquo;re good to go. We&rsquo;ll talk security later.</p>
 <h2 id="link-it-to-azure-devops">Link it to Azure DevOps</h2>
 <p>Go to you Azure DevOps portal, at the root (not in a project) and go to the organization settings.</p>
 <p>Now, in the left menu, select Agent pools under Pipelines and click on <em>Add pool</em>.</p>

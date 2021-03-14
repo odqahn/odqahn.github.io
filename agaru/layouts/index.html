@@ -11,7 +11,7 @@ Another tech blog.
 
 <div class="posts-list">
 {{ with .Site.GetPage "/posts" }}
-    {{ range first 3 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}
+    {{ range first 10 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}
         <div class="post">
             <p>
                 <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}<br/>{{ .ReadingTime }}-min read</div>
