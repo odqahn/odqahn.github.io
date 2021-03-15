@@ -9,7 +9,7 @@ Another tech blog.
 # Who am I?
 Hi, I'm Simon Michelizza, a 34 year old cloud architect. I'm mostly working with Azure, devops, Intune, AKS,... And this is about sharing the good, and mostly the ugly so you don't have to.
 
-![about.png](about.png)
+![about.jpg](about.jpg)
 
 # Links
 - [LinkedIn](https://www.linkedin.com/in/simon-michelizza/)
