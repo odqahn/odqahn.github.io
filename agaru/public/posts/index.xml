@@ -15,7 +15,7 @@
       <guid>https://www.agaru.be/posts/azure-devops-vmss/part3/</guid>
       <description>Azure DevOps &amp;amp; VMSS agents Good news everyone! Azure DevOps now supports VMSS as agent.
 In this series of posts, we&amp;rsquo;ll cover:
- Why use a VMSS with Azure DevOps? How to create and configure a simple VMSS. Customizing the VMSS. Use Microsoft&amp;rsquo;s script to create an image for our VMSS. Getting freaky with those images. Security aspects.  Custo! So far, we&amp;rsquo;ve taken the Ubuntu LTS image and fed it to a VMSS.</description>
+ Why use a VMSS with Azure DevOps? How to create and configure a simple VMSS. Customizing the VMSS. Use Microsoft&amp;rsquo;s script to create an image for our VMSS. Getting freaky with those images. Security aspects.  Custo So far, we&amp;rsquo;ve taken the Ubuntu LTS image and fed it to a VMSS.</description>
     </item>
     
     <item>
@@ -47,7 +47,7 @@ In this series of posts, we&amp;rsquo;ll cover:
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://www.agaru.be/posts/hosting/</guid>
-      <description>Welcome! Here&amp;rsquo;s a first post about this webiste.
+      <description>Welcome Here&amp;rsquo;s a first post about this webiste.
 Intro Tools:
  Hugo Azure Statis Web Apps Github VScode Markdown  Hugo is an open-source static site generators based on Markdown. It allows you to generate static pages that requieres very few resources to serve. There will be some html, some css and some JS, and that&amp;rsquo;s pretty much it. This will garantee an easy to maintain and very responsive website.</description>
     </item>

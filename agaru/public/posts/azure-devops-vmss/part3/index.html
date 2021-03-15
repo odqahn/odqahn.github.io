@@ -69,7 +69,7 @@
 
 Mar. 14, 2021
 <br/><br/>
-<h1 id="azure-devops--vmss-agents">Azure DevOps &amp; VMSS agents</h1>
+<h2 id="azure-devops--vmss-agents">Azure DevOps &amp; VMSS agents</h2>
 <p>Good news everyone! Azure DevOps now supports VMSS as agent.</p>
 <p>In this series of posts, we&rsquo;ll cover:</p>
 <ul>
@@ -80,7 +80,7 @@ Mar. 14, 2021
 <li>Getting freaky with those images.</li>
 <li>Security aspects.</li>
 </ul>
-<h2 id="custo">Custo!</h2>
+<h2 id="custo">Custo</h2>
 <p>So far, we&rsquo;ve taken the Ubuntu LTS image and fed it to a VMSS. By linking the scale set with Az DevOps in the previous post, we gave DevOps the ability to drive the scale set. It now manages the instances based on it&rsquo;s need and the constraints you&rsquo;ve (min/max number of instance, idle time,&hellip; ) and it injects and configure the agent.</p>
 <p>You basically have a naked Ubuntu image so, what if you want to build a docker container from a dockerfile? Sure, you have an <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/tool/docker-installer?view=azure-devops">Install Docker CLI</a> pipeline task available but it&rsquo;ll only install the cli and not the engine.</p>
 <p>You could also make a step in your pipeline to install the engine when the job is running but this will consume time and resources each time you run it.</p>
@@ -148,8 +148,10 @@ az image create <span style="color:#ae81ff">\
 <h2 id="conclusion">Conclusion</h2>
 <p>Congratulation, you now have a custom agent scale set for your very own pipelines. But as a devops engineer, you probably have a much better use of your time than generating manual image to update the scale set.</p>
 <h2 id="resources">Resources</h2>
-<p><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/linux/capture-image">How to create a managed image of a virtual machine or VHD</a></p>
-<p><a href="https://docs.docker.com/engine/install/ubuntu/">Docker install on Ubuntu</a></p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/linux/capture-image">How to create a managed image of a virtual machine or VHD</a></li>
+<li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker install on Ubuntu</a></li>
+</ul>
 
 
         <div class="footer">

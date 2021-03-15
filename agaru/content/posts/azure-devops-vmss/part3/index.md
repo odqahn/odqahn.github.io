@@ -4,10 +4,12 @@ date = "2021-03-14"
 description = "Customizing the VMSS"
 +++
 
-# Azure DevOps & VMSS agents
+## Azure DevOps & VMSS agents
+
 Good news everyone! Azure DevOps now supports VMSS as agent.
 
 In this series of posts, we'll cover:
+
 * ~~Why use a VMSS with Azure DevOps?~~
 * ~~How to create and configure a simple VMSS.~~
 * Customizing the VMSS.
@@ -15,7 +17,7 @@ In this series of posts, we'll cover:
 * Getting freaky with those images.
 * Security aspects.
 
-## Custo!
+## Custo
 
 So far, we've taken the Ubuntu LTS image and fed it to a VMSS. By linking the scale set with Az DevOps in the previous post, we gave DevOps the ability to drive the scale set. It now manages the instances based on it's need and the constraints you've (min/max number of instance, idle time,... ) and it injects and configure the agent.
 
@@ -23,7 +25,7 @@ You basically have a naked Ubuntu image so, what if you want to build a docker c
 
 You could also make a step in your pipeline to install the engine when the job is running but this will consume time and resources each time you run it.
 
-You could also use a [script that'll run each time an instance is created](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/scale-set-agents?view=azure-devops#customizing-virtual-machine-startup-via-the-custom-script-extension) or [use cloud-init](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/using-cloud-init) to attain the same job (tough you'll have to [delay walinuxagent start](https://github.com/Azure/WALinuxAgent/issues/1938#issuecomment-657293920)), but you'll pay the execution every time you instantiate an agent. 
+You could also use a [script that'll run each time an instance is created](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/scale-set-agents?view=azure-devops#customizing-virtual-machine-startup-via-the-custom-script-extension) or [use cloud-init](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/using-cloud-init) to attain the same job (tough you'll have to [delay walinuxagent start](https://github.com/Azure/WALinuxAgent/issues/1938#issuecomment-657293920)), but you'll pay the execution every time you instantiate an agent.
 
 On the plus side, your image is not immtuable, you lose control of your pipeline runtime and things might start to break without you being able to rollback anything.
 
@@ -92,7 +94,7 @@ Remember, there's no need to install the agent, this will be done for you by Azu
 
 Let's remove the machine specific stuff and remove the last created user (the one you're using) by running `sudo waagent -deprovision+user`.
 
-Wait the command to end and close your ssh session. Now, deallocate the VM and generalize it! 
+Wait the command to end and close your ssh session. Now, deallocate the VM and generalize it!
 
 ```bash
 az vm deallocate \
@@ -117,10 +119,9 @@ Now you can follow the [previous part]({{< ref "/content/posts/azure-devops-vmss
 
 ## Conclusion
 
-Congratulation, you now have a custom agent scale set for your very own pipelines. But as a devops engineer, you probably have a much better use of your time than generating manual image to update the scale set. 
+Congratulation, you now have a custom agent scale set for your very own pipelines. But as a devops engineer, you probably have a much better use of your time than generating manual image to update the scale set.
 
 ## Resources
 
-[How to create a managed image of a virtual machine or VHD](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/capture-image)
-
-[Docker install on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+* [How to create a managed image of a virtual machine or VHD](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/capture-image)
+* [Docker install on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)

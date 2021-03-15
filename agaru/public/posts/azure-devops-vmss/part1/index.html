@@ -69,9 +69,9 @@
 
 Mar. 5, 2021
 <br/><br/>
-<h1 id="azure-devops--vmss-agents">Azure DevOps &amp; VMSS agents</h1>
-<p><img src="farnsworth.png" alt="farnsworth.png">
-Good news everyone! Azure DevOps now supports VMSS as agent.</p>
+<h2 id="azure-devops--vmss-agents">Azure DevOps &amp; VMSS agents</h2>
+<p><img src="farnsworth.png" alt="Professor Farnsworth"></p>
+<p>Good news everyone! Azure DevOps now supports VMSS as agent.</p>
 <p>In this series of posts, we&rsquo;ll cover:</p>
 <ul>
 <li>Why use a VMSS with Azure DevOps?</li>
@@ -112,11 +112,11 @@ Microsoft Hosted agents are 33,7€ a month, first one is free for 1800minutes. 
 <p>If the build are running 24/24 7/7, you&rsquo;ll have to pay 113.85€ in DevOps for the // self hosted builds and 738.78€ of VM in the sale set: 852,63€. If no jobs are running, you&rsquo;ll only have to pay the 113,85€.</p>
 <p>In a more realistic scenario, let&rsquo;s assume people are making build and release 10h a day during the weekdays only. We&rsquo;ll have 4 days of heavy build / test / release (end of the sprint) each month. 5 VMs will be on during regular days and 8 during heavy load: <strong>113,85 + 303,59 (regular use) + 12,14 (peak use): 419€</strong>.</p>
 <p>Note that those are only estimates. You&rsquo;ll have to take a lot into account to have a precise comparaison.</p>
-<h3 id="custo">Custo!</h3>
+<h3 id="custo">Custo</h3>
 <p>Self hosted agents aren&rsquo;t customisable. You can&rsquo;t change the default java version for all pipelines, you can&rsquo;t add tools or preinstall dependencies.
 Of course, you can always add tasks in your pipelines to do that but that will makes your yaml crowded and complex (you&rsquo;re using yaml for you pipelines, right?) and the task needs to run each time you make a build.</p>
 <p>Self hosted can be tailored to your need, after all, it&rsquo;s your little VM. But who has time for maintenance. Plus, you know too well you&rsquo;ll have to upgrade a framework at the worst possible time (Friday afternoon, the release must happen but the agent has to be patched first).</p>
-<h2 id="next">Next!</h2>
+<h2 id="next">Next</h2>
 <p>Come back and see how to create the VMSS and link it to your Azure DevOps!</p>
 
 
