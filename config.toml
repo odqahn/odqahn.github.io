@@ -1,6 +1,7 @@
 baseurl = "https://www.agaru.be/"
 title = "上がる"
 languageCode = "en-us"
+publishDir = "docs"
 
 [params]
   # Cutting off the page title to two chars for mobile (console-demo -> co)

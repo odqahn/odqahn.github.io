@@ -90,7 +90,7 @@ Mar. 14, 2021
 <h3 id="create-the-vm">Create the VM</h3>
 <p>Here, we&rsquo;ll create a VM, install what we need and generate a managed image that we&rsquo;ll be able to use in our scale set.</p>
 <p>First, let&rsquo;s create a VM. We&rsquo;ll reuse the rg and subnet created in the <a href="https://www.agaru.be/posts/azure-devops-vmss/part2/">previous post</a>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user<span style="color:#f92672">=</span>YOUR_USERNAME
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user<span style="color:#f92672">=</span>YOUR_USERNAME
 rgName<span style="color:#f92672">=</span>NAME_OF_THE_RG
 vmName<span style="color:#f92672">=</span>vmssTemplate
 az group create --name $rgName --location westeurope
@@ -103,7 +103,7 @@ az vm create <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --admin-username $user 
 </code></pre></div><p>Ii you&rsquo;re unsure how to get the subnet id, read the previous post.</p>
 <p>Once your VM is up and running, ssh to it and start doing what you need. For the example, here&rsquo;s how to install the docker engine:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># update &amp; upgrade</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># update &amp; upgrade</span>
 sudo apt-get update 
 sudo apt-get upgrade
 <span style="color:#75715e"># add needed packages</span>
@@ -126,13 +126,13 @@ echo <span style="color:#ae81ff">\
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 </code></pre></div><p>Now you&rsquo;re done installing your things. It&rsquo;s time to test the installation by running a hello world.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run hello-world
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run hello-world
 </code></pre></div><p>If things works out, you should see a <em>Hello from Docker!</em>. It is advised to test everything you&rsquo;ve installed before going to the next step.</p>
 <p>Remember, there&rsquo;s no need to install the agent, this will be done for you by Azure DevOps when linking the new scale set.</p>
 <h3 id="deprovision-the-vm">Deprovision the VM</h3>
 <p>Let&rsquo;s remove the machine specific stuff and remove the last created user (the one you&rsquo;re using) by running <code>sudo waagent -deprovision+user</code>.</p>
 <p>Wait the command to end and close your ssh session. Now, deallocate the VM and generalize it!</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">az vm deallocate <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">az vm deallocate <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --resource-group $rgName <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --name $vmName
     
@@ -140,7 +140,7 @@ az vm generalize <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --resource-group $rgName <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --name $vmName
 </code></pre></div><p>Your VM cannot be started anymore but we&rsquo;ll generate an image from it:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">imageName<span style="color:#f92672">=</span>NAME_OF_THE_IMAGE
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">imageName<span style="color:#f92672">=</span>NAME_OF_THE_IMAGE
 az image create <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --resource-group $rgName <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>    --name $imageName --source $vmName

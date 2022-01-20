@@ -91,14 +91,14 @@ Mar. 11, 2021
 <li>A dedicated subnet (optional but recommended)</li>
 </ul>
 <p>Get your subnet ID by adding /subnets/nameofyoursubnet after the ID of the VNet or by using Azure CLI:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vnetRgName<span style="color:#f92672">=</span>NAME_OF_THE_RG_VNET
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vnetRgName<span style="color:#f92672">=</span>NAME_OF_THE_RG_VNET
 vnetName<span style="color:#f92672">=</span>NAME_OF_THE_VNET
 subnetName<span style="color:#f92672">=</span>NAME_OF_THE_SUBNET
 location<span style="color:#f92672">=</span>westeurope
 az group create --name $vnetRgName --location $location
 subnetId<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>az network vnet subnet list -g $vnetRgName --vnet-name $vnetName --query <span style="color:#e6db74">&#34;[?contains(name, &#39;</span>$subnetName<span style="color:#e6db74">&#39;)].id&#34;</span> -o tsv<span style="color:#66d9ef">)</span>
 </code></pre></div><p>Now, set a default username, a name for your VMSS, a resource group (it needs to exist before this command) and the subnet ID you got just before.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user<span style="color:#f92672">=</span>YOUR_USERNAME
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">user<span style="color:#f92672">=</span>YOUR_USERNAME
 vmssName<span style="color:#f92672">=</span>A_NAME_FOR_VMSS
 rgName<span style="color:#f92672">=</span>NAME_OF_THE_RG
 subnetId<span style="color:#f92672">=</span>ID_OF_YOUR_SUBNET
