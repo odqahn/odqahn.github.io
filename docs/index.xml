@@ -62,16 +62,5 @@ Who am I? Hi, I&amp;rsquo;m Simon Michelizza, a 34 year old cloud architect. I&a
 Links  LinkedIn GitHub  </description>
     </item>
     
-    <item>
-      <title>Hosting</title>
-      <link>https://www.agaru.be/posts/hosting/</link>
-      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.agaru.be/posts/hosting/</guid>
-      <description>Welcome Here&amp;rsquo;s a first post about this webiste.
-Intro Tools:
- Hugo Azure Statis Web Apps Github VScode Markdown  Hugo is an open-source static site generators based on Markdown. It allows you to generate static pages that requieres very few resources to serve. There will be some html, some css and some JS, and that&amp;rsquo;s pretty much it. This will garantee an easy to maintain and very responsive website.</description>
-    </item>
-    
   </channel>
 </rss>
